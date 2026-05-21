@@ -65,12 +65,7 @@ ALPHA           = 0.05
 
 
 def save_csv(df, basename):
-    """
-    Save output CSV(s).
-    - If EVAL_PROMPT_MODE == "all": split by prompt_type and save with prefix
-      e.g. zs_accuracy.csv, fs_accuracy.csv, cot_accuracy.csv
-    - Otherwise: save as a single file e.g. accuracy.csv
-    """
+
     if EVAL_PROMPT_MODE == "all" and "prompt_type" in df.columns:
         for pt, group in df.groupby("prompt_type"):
             prefix = PROMPT_PREFIX.get(pt, pt)

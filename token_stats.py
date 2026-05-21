@@ -125,7 +125,7 @@ for dataset in PROMPT_REGISTRY:
     for prompt_type in PROMPT_TYPES:
         print(f"  prompt_type={prompt_type}")
 
-        # Build per-instance records
+
         instance_records = []
 
         for idx, row in df.iterrows():
@@ -146,7 +146,7 @@ for dataset in PROMPT_REGISTRY:
         instance_df.to_csv(out_path, index=False)
         print(f"    Saved {out_path}")
 
-        # Build summary rows
+
         for rep_id, tok in unique_tokenizers.items():
             short = tok_name_map[rep_id]
 
